@@ -15,9 +15,16 @@ const Author = document.querySelector('.author');
 const btn = document.querySelector('.form button');
 const currentDate = DateTime.local();
 
+const newDate = currentDate.toLocaleString({
+  month: 'long',
+  day: 'numeric',
+  year: 'numeric',
+});
+const newTime = currentDate.toLocaleString(DateTime.TIME_WITH_SECONDS).toLowerCase();
 
 const bookc = new Book();
 
+document.getElementById('current-date').innerHTML = `${newDate}, ${newTime}`;
 
 booksList.addEventListener('click', () => {
   window.location.reload();
