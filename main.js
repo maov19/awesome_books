@@ -10,7 +10,6 @@ const btn = document.querySelector('.form button');
 
 const bookc = new Book();
 
-
 btn.addEventListener('click', () => {
   if (Title.value === '' || Author.value === '') {
     document.querySelector('.form > span').textContent = 'All fields are required!';
@@ -24,7 +23,6 @@ btn.addEventListener('click', () => {
   }
   window.location.reload();
 });
-
 
 window.remove = (id) => {
   bookc.removeBook(id);
