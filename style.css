@@ -2,11 +2,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Fira Sans', sans-serif;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 body {
-  background: rgb(242, 241, 241);
+  background: rgb(230, 227, 227);
 }
 
 header nav {
@@ -62,11 +62,16 @@ h1 {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  margin-bottom: 10px;
+  /* margin-bottom: 10px; */
   font-size: 16px;
   padding: 9px;
-  background: rgb(242, 241, 241);
-  border-radius: 7px;
+  background: white;
+  color: black;
+}
+
+.element:nth-child(odd){
+  background-color: rgba(196, 190, 190, 0.603);
+  color: black;
 }
 
 form button {
@@ -78,7 +83,7 @@ form button {
   bottom: -40px;
   right: 0;
   color: #fff;
-  background: #1d9207;
+  background: #090792;
   border: none;
   border-radius: 5px;
 }
@@ -95,7 +100,7 @@ form button {
 }
 
 .element button {
-  background: #f53030;
+  background: #f36060;
   color: #fff;
   padding: 5px;
   border: none;
