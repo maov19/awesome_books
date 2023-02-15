@@ -62,6 +62,7 @@ h1 {
   justify-content: space-between;
   align-items: center;
   width: 100%;
+
   /* margin-bottom: 10px; */
   font-size: 16px;
   padding: 9px;
@@ -69,7 +70,7 @@ h1 {
   color: black;
 }
 
-.element:nth-child(odd){
+.element:nth-child(odd) {
   background-color: rgba(196, 190, 190, 0.603);
   color: black;
 }

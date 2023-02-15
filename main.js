@@ -58,7 +58,6 @@ btn.addEventListener('click', () => {
   }
 });
 
-
 window.remove = (id) => {
   bookc.removeBook(id);
 };
