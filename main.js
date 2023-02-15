@@ -1,6 +1,6 @@
 /* eslint-disable class-methods-use-this */
 /* eslint-disable no-unused-vars */
-import Book from './Book.js';
+import Book from './modules/Book.js';
 
 const booksList = document.getElementById('booksList');
 const newBook = document.getElementById('newBook');
@@ -12,32 +12,19 @@ const showBooks = document.querySelector('.record');
 const Title = document.querySelector('.title');
 const Author = document.querySelector('.author');
 const btn = document.querySelector('.form button');
-const currentDate = DateTime.local();
 
 const bookc = new Book();
 
-booksList.addEventListener('click', () => {
-  window.location.reload();
-  recordSec.style.display = 'block';
-  addForm.style.display = 'none';
-  contactSec.style.display = 'none';
-});
 
 newBook.addEventListener('click', () => {
-  recordSec.style.display = 'none';
+  recordSec.style.display = 'block';
   addForm.style.display = 'block';
-  contactSec.style.display = 'none';
 });
 
-contactInfo.addEventListener('click', () => {
-  recordSec.style.display = 'none';
-  addForm.style.display = 'none';
-  contactSec.style.display = 'block';
-});
 
 btn.addEventListener('click', () => {
   if (Title.value === '' || Author.value === '') {
-    document.querySelector('.form > span').textContent = 'All fiels are required!';
+    document.querySelector('.form > span').textContent = 'All fields are required!';
   } else {
     const bookObj = {
       id: new Date().getUTCMilliseconds(),
@@ -46,18 +33,17 @@ btn.addEventListener('click', () => {
     };
     bookc.addBook(bookObj);
   }
+  window.location.reload();
 });
+
 
 window.remove = (id) => {
   bookc.removeBook(id);
 };
 
-// Locale storage
+// Local storage
 
 window.addEventListener('DOMContentLoaded', () => {
-  recordSec.style.display = 'block';
-  addForm.style.display = 'none';
-  contactSec.style.display = 'none';
   const books = JSON.parse(localStorage.getItem('data')) === null ? [] : JSON.parse(localStorage.getItem('data'));
   books.forEach((i) => {
     showBooks.innerHTML += `
